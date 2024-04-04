@@ -276,7 +276,7 @@ extension Pager.PagerContent {
         return Double(max(interactiveScale, min(1, 1 - distance * scaleIncrement)))
     }
 
-    private func distance(to item: PageWrapper<Element, ID>) -> CGFloat {
+    public func distance(to item: PageWrapper<Element, ID>) -> CGFloat {
         guard let index: Int = dataDisplayed.firstIndex(of: item) else { return 0 }
         guard let displayedItem = dataDisplayed.first(where: { $0 == data[page] }) else { return 0 }
         guard let displayedIndex: Int = dataDisplayed.firstIndex(of: displayedItem) else { return 0 }
